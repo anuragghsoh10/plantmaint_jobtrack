@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plant Maintenance App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Login Screen -->
+    <form id="loginScreen">
+      <h2>Login</h2>
+      <label>Username</label>
+      <input id="loginUsername" type="text" required>
+      <label>Password</label>
+      <input id="loginPassword" type="password" required>
+      <div class="nav-btns">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+
+    <!-- Notification Screen -->
+    <form id="notificationScreen" class="hidden">
+      <h2>Notification</h2>
+      <label>Notification No.</label>
+      <input id="notifNo" type="text" required>
+      <label>Functional Location</label>
+      <input id="functLoc" type="text">
+      <label>Description</label>
+      <input id="notifDesc" type="text">
+      <label>Damage Code</label>
+      <input id="damageCode" type="text">
+      <label>Equipment</label>
+      <input id="equipment" type="text">
+      <label>Effect</label>a
+      <input id="effect" type="text">
+      <div class="nav-btns">
+        <button type="button" id="backToLogin">Back</button>
+        <button type="submit">Next</button>
+      </div>
+    </form>
+
+    <!-- Work Order Screen -->
+    <form id="workOrderScreen" class="hidden">
+      <h2>Work Order</h2>
+      <label>Work Order No.</label>
+      <input id="workOrderNo" type="text" required>
+      <label>Notification No.</label>
+      <input id="woNotifNo" type="text" required>
+      <label>Operations</label>
+      <input id="operations" type="text">
+      <label>No. of People</label>
+      <input id="numPeople" type="number" min="1">
+      <label>Duration(hours)</label>
+      <input id="duration" type="number" min="1">
+      <label>Start Date</label>
+      <input id="startDate" type="date">
+      <label>Start Time</label>
+      <input id="startTime" type="time">
+      <label>End Date</label>
+      <input id="endDate" type="date">
+      <label>End Time</label>
+      <input id="endTime" type="time">
+      <label>Status</label>
+      <select id="status">
+        <option value="created">Created</option>
+        <option value="in progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+      <div class="nav-btns">
+        <button type="button" id="backToNotification">Back</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
