@@ -62,7 +62,30 @@ app.post('/api/login', (req, res) => {
 });
 
 
+//User Register
+app.post('/api/register', async (req, res) => {
+  const { username, password } = req.body;
 
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    db.query(
+      'INSERT INTO users (username, password_hash) VALUES (?, ?)',
+      [username, hashedPassword],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          return res.status(400).send('User already exists');
+        }
+        res.send('User registered successfully');
+      }
+    );
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Server error');
+  }
+});
 
 // Create notification
 app.post('/api/notifications', (req, res) => {
